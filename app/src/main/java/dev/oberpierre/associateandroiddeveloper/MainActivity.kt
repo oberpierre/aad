@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
             val textValue: TextView = findViewById(R.id.text_value)
             val stringValue = textValue.text.toString()
             val originalValue = Integer.parseInt(stringValue)
-            val newValue = MyWorker.doubleTheValue(originalValue)
+            val newValue = if (originalValue == 0) 1 else MyWorker.doubleTheValue(originalValue)
             textValue.text = newValue.toString()
 
             Snackbar.make(
